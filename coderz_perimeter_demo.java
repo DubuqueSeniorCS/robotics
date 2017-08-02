@@ -42,11 +42,11 @@ public class Main {
             Button.LEDPattern(0);
             // Turn 90 degrees (setpoint for pivot)
             while (!(90 == Math.abs(getSamples(robot.getGyro().getAngleMode(), 0)))) {
-                robot.getLeftMotor().resetTachoCount(); // Set max power/speed at 45.
+                robot.getLeftMotor().resetTachoCount(); // Set max power/speed at 46.
                 // Allow for power to go negative to correct overshot of setpoint.
                 // left turn
-                motorMove(getSteerValue(-100, (45 - getSamples(robot.getGyro().getAngleMode(), 0) / 2), true), 1, robot.getLeftMotor());
-                motorMove(getSteerValue(-100, (45 - getSamples(robot.getGyro().getAngleMode(), 0) / 2), false), 1, robot.getRightMotor());
+                motorMove(getSteerValue(-100, (46 - getSamples(robot.getGyro().getAngleMode(), 0) / 2), true), 1, robot.getLeftMotor());
+                motorMove(getSteerValue(-100, (46 - getSamples(robot.getGyro().getAngleMode(), 0) / 2), false), 1, robot.getRightMotor());
                 Console.print(getSamples(robot.getGyro().getAngleMode(), 0));
             }
         
